@@ -3,12 +3,23 @@
 /* Global variables. */
 :root {
   /* Set sans-serif & mono fonts */
-  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
-    "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
-    "Helvetica Neue", sans-serif;
+  --sans-font: Arial, sans-serif;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --standard-border-radius: 5px;
   --border-width: 1px;
+  
+  --width: 720px;
+  --font-main: Arial, sans-serif;
+  --font-secondary: Arial, sans-serif;
+  --font-scale: 1.15em;
+  --background-color: #fff;
+  --heading-color: #222;
+  --text-color: #444;
+  --link-color: #3273dc;
+  --visited-color:  #8b6fcb;
+  --code-background-color: #f2f2f2;
+  --code-color: #222;
+  --blockquote-color: #222;
 
   /* Default (light) theme */
   --bg: #000;
@@ -40,6 +51,22 @@
     --preformatted: #ccc;
     --disabled: #111;
   }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #01242e;
+        --heading-color: #eee;
+        --text-color: #ddd;
+        --link-color: #8cc2dd;
+        --visited-color:  #8b6fcb;
+        --code-background-color: #000;
+        --code-color: #ddd;
+        --blockquote-color: #ccc;
+    }
+}
+  
+  
+  
   /* Add a bit of transparency so light media isn't so glaring in dark mode */
   img,
   video {
@@ -756,33 +783,7 @@ sub {
   }
 }
 
-:root {
-    --width: 720px;
-    --font-main: Verdana, sans-serif;
-    --font-secondary: Verdana, sans-serif;
-    --font-scale: 1em;
-    --background-color: #fff;
-    --heading-color: #222;
-    --text-color: #444;
-    --link-color: #3273dc;
-    --visited-color:  #8b6fcb;
-    --code-background-color: #f2f2f2;
-    --code-color: #222;
-    --blockquote-color: #222;
-}
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #01242e;
-        --heading-color: #eee;
-        --text-color: #ddd;
-        --link-color: #8cc2dd;
-        --visited-color:  #8b6fcb;
-        --code-background-color: #000;
-        --code-color: #ddd;
-        --blockquote-color: #ccc;
-    }
-}
 
 body {
     font-family: var(--font-secondary);
