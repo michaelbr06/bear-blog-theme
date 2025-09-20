@@ -1,0 +1,230 @@
+
+:root {
+	--width: 45rem;
+	--font-main: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+    --font-secondary: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+	--font-scale: 1.1em;
+	--background-color: #fff;
+	--heading-color: #242121;
+	--text-color: #573d3d;
+	--link-color: #c1121f;
+	--visited-color: #b6042a;
+	--code-background-color: #f2f2f2;
+	--code-color: #222;
+	--blockquote-color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #01242e;
+        --heading-color: #eee;
+        --text-color: #ddd;
+        --link-color: #8cc2dd;
+        --visited-color:  #8b6fcb;
+        --code-background-color: #000;
+        --code-color: #ddd;
+        --blockquote-color: #ccc;
+    }
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  	font-family: var(--font-main);
+    color: var(--heading-color);
+    line-height: initial; 
+}
+
+strong, b {
+  	color: var(--heading-color);
+}
+
+a {
+    color: var(--link-color);
+    cursor: pointer;
+}
+
+header nav {
+		display: flex; 
+  		justify-content: space-between;
+}
+
+nav a {
+    margin-right: 5px;
+}
+
+button {
+    margin: 0;
+}
+
+main {
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed;
+}
+
+img {
+    max-width: 100%;
+}
+
+pre, code {
+    font-family: "Courier New";
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+}
+
+blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+header h1 {
+	font-size: 1.7em; 
+  	display: flex; 
+}
+
+.title {
+    text-decoration: none;
+}
+
+.inline {
+    width: auto !important;
+}
+
+.highlight,
+.code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+/* blog post list */
+/* post titles on left side */
+.blog-posts a {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 110px);
+    text-decoration: none;
+}
+
+/* Date on right side of page */
+.blog-posts time {
+    float: right;
+    margin: 3px 0 0;
+}
+
+ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li {
+    display: flex;
+  	flex-direction: row-reverse;	
+  	justify-content: space-between;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	border-bottom: 1px dotted lightgray;
+}
+
+ul.blog-posts li span {
+    flex: 0 0 90px;
+  	justify-content: space-between; 
+  	flex-wrap: nowrap; 
+  	font-family: monospace;
+}
+
+ul.blog-posts li a:visited {
+    color: var(--visited-color);
+}
+
+.home footer {
+  display: none;
+}
+
+/* Remove Footer in Now Page*/
+body.page footer span#footer-directive p em {
+  display: none; 
+}
+
+
+
+/* 404 Page */
+.not-found h2 {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found h2::after {
+  content: url('https://bear-images.sfo2.cdn.digitaloceanspaces.com/michaelroxas/vincent.gif');
+  visibility: visible; /* Displays the new text */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Search Input in Blog page */
+
+input#searchInput {
+	width: 50%;
+  	font: var(--font-main);
+}
+
+@media (max-width: 480px) {
+  input#searchInput {
+    width: 95%;
+  }
+}
+
+
+/* Upvote Button */
+.upvote-count {
+    visibility: hidden; /* Hide the text */
+}
+.upvote-count::before {
+    visibility: visible; /* show the button */
+}
+.upvote-button.upvoted {
+    border-bottom: 2px solid black; /* indicate that the button has been clicked */
+}
+
+/* Reply via email button */
+button a {
+	font-size: larger;
+}
