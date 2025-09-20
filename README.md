@@ -1,2 +1,3 @@
-This is my custom CSS styles for my blog. 
-Check out [Bear Blog](tab:https://bearblog.dev)
+My blog themes for [Bear Blog](tab:https://bearblog.dev)
+
+As of Sep 2025, I'm using the `delightful.css`
